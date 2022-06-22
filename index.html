@@ -18,20 +18,41 @@
         
         <main>
             <!-- Intro section-->
-            <section id="intro-text">
-                <h1>Cooding Quiz Challenge</h1>
+            <section id="intro-text" class="hidden">
+                <h1>Coding Quiz Challenge</h1>
                 <p>Try to answer the following questions within the time limit. Keep in mind that incorrect answers with penalize your score by 10 seconds.</p>
+                <button name="start-btn" id="start-btn">Start Quiz</button>
             </section>
 
             <!--Question section-->
-            <section>
-
+            <section id="question-format" class="hidden">
+                <h2 id="question">Placeholder question text</h2>
+                <ul id="answers">
+                    <li>
+                        <button id="answer-btn-1" type="submit">Answer 1</button>
+                    </li>
+                    <li>
+                        <button id="answer-btn-2" type="submit">Answer 2</button>
+                    </li>
+                    <li>
+                        <button id="answer-btn-3" type="submit">Answer 3</button>
+                    </li>
+                    <li>
+                        <button id="answer-btn-4" type="submit">Answer 4</button>
+                    </li>
+                </ul>
             </section>
+
+
 
             <!--Quiz end text -->
-            <section>
-                
+            <section id="end-quiz-sc" class="hidden">
+                <h2>All Done!</h2>
+                <p>Your Final score is:<span id="final-score"></span></p>               
             </section>
+
+
+            <!--High scores text-->
         </main>
 
 
