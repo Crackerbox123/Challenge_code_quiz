@@ -16,9 +16,9 @@
 
         <!-- Main content card-->
         
-        <main>
+        <main id="main-card">
             <!-- Intro section-->
-            <section id="intro-text" class="hidden">
+            <section id="intro" class="hidden">
                 <h1>Coding Quiz Challenge</h1>
                 <p>Try to answer the following questions within the time limit. Keep in mind that incorrect answers with penalize your score by 10 seconds.</p>
                 <button name="start-btn" id="start-btn">Start Quiz</button>
@@ -42,17 +42,30 @@
                     </li>
                 </ul>
             </section>
-
-
-
-            <!--Quiz end text -->
+            <!-- End of quiz Prompt-->
             <section id="end-quiz-sc" class="hidden">
-                <h2>All Done!</h2>
-                <p>Your Final score is:<span id="final-score"></span></p>               
+                 <h2>All Done!</h2>
+                <p>Your final score is:<span id="final-score"></span></p>
+                <form id="high-score-form">
+                <textarea id="initials-field" placeholder="Enter Initials Here"></textarea>
+                <button id="submit-initials">Save my Score</button>
+                </form>
+                <button id="go-back">Back to Start</button>
+                <button id="clear-scores">Clear all Scores</button>
+            </section>
+            <!-- High score Prompt -->
+            <section id="high-score-sc" class="hidden">
+                <h2>High Scores</h2>
+                <!-- <ul id="high-score-list"></ul> -->
+                <table id="high-scores-tbl">
+                    <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                </table>
+                <button type="button" id="back-to-main">Return</button>
             </section>
 
-
-            <!--High scores text-->
         </main>
 
 

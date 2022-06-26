@@ -1,6 +1,6 @@
 // variables 
 var startBtn = document.getElementById("start-btn");
-var introSection = document.getElementById("intro-text");
+var introSection = document.getElementById("intro");
 var questionSc = document.getElementById("question-format-sc");
 var endQuizSc = document.getElementById("end-quiz-sc");
 var highScoreSc = document.getElementById("high-score-sc");
@@ -84,8 +84,17 @@ var QuestionsObject = [
 
 // shows intro-text section on page load
 
-window.onload = function() {
 
+window.onload = function(){
+    introSection.classList.remove("hidden");
+    activeSection = introSection;
+    timer.textContent = timeLeft;
+
+    if(ScoreList === null){
+        ScoreList = [];
+    }
+    console.log(ScoreList);
+    loadHighScores();
 }
 
 
