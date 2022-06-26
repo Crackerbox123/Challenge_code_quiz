@@ -1,6 +1,31 @@
 // variables 
-
+var startBtn = document.getElementById("start-btn");
 var introSection = document.getElementById("intro-text");
+var questionSc = document.getElementById("question-format-sc");
+var endQuizSc = document.getElementById("end-quiz-sc");
+var highScoreSc = document.getElementById("high-score-sc");
+var questionText = document.getElementById("question");
+var answer1Text = document.getElementById("answer-btn-1");
+var answer2Text = document.getElementById("answer-btn-2");
+var answer3Text = document.getElementById("answer-btn-3");
+var answer4Text = document.getElementById("answer-btn-4");
+var submitScoreBtn = document.getElementById("submit-initials");
+var clearScoresBtn = document.getElementById("clear-scores");
+var initialsTextarea = document.getElementById("initials-field");
+var backToStartBtn = document.getElementById("go-back");
+var backFromHSBtn = document.getElementById("back-to-main");
+var toHighScoresBtn = document.getElementById("high-scores-button");
+var highScoreTbl = document.getElementById("high-scores-tbl");
+var currentCorrectAnswer;
+var currentQuestionIdx = 0;
+var quizLength = 10;
+var questionBank;
+var timer = document.getElementById("timer");
+var timeLeft = 100;
+var tempScore;
+var ScoreList = JSON.parse(localStorage.getItem("ScoreList"));
+var activeSection;
+
 
 
 // array of questions + answers
@@ -80,4 +105,21 @@ function startQuiz(){
     intervalID = setInterval(showScore, 1000);
     quiz();
     reveal(questionSc);
+}
+
+//displays next question
+function quiz() {
+    loadQuestion(currentQuestionIdx);
+}
+
+//loads new question data from our question obj array
+function loadQuestion(questionNum) {
+    var newQuestion = QuestionsObj[questionNum];
+    currentCorrectAnswer = newQuestion.correctAnsStr;
+    questionText.innerHTML = newQuestion.questionText;
+    answer1Text.innerHTML = newQuestion.AnswerArr[0];
+    answer2Text.innerHTML = newQuestion.AnswerArr[1];
+    answer3Text.innerHTML = newQuestion.AnswerArr[2];
+    answer4Text.innerHTML = newQuestion.AnswerArr[3];
+
 }
