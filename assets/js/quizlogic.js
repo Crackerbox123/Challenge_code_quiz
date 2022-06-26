@@ -18,7 +18,7 @@ var toHighScoresBtn = document.getElementById("high-scores-button");
 var highScoreTbl = document.getElementById("high-scores-tbl");
 var currentCorrectAnswer;
 var currentQuestionIdx = 0;
-var quizLength = 10;
+var quizLength = 5;
 var questionBank;
 var timer = document.getElementById("timer");
 var timeLeft = 100;
@@ -32,7 +32,7 @@ var activeSection;
 var QuestionsObj = [
     {
         questionText: "Commonly used data types do NOT include:",
-        correctAnswer: "",
+        correctAnswer: 'alerts',
         answerArr: [
             'Numbers',
             'strings',
@@ -42,7 +42,7 @@ var QuestionsObj = [
     },
     {
         questionText: "The condition in an if/else statement is enclosed in ________",
-        correctAnswer: "Curly Brackets",
+        correctAnswer: 'Curly Brackets',
         answerArr: [
             'Quotes',
             'Curly Brackets',
@@ -52,34 +52,34 @@ var QuestionsObj = [
     },
     {
         questionText: "Arrays in JavaScript can be used to store:",
-        correctAnswer:"All of the Above",
+        correctAnswer:'All of the Above',
         answerArr: [
             'Numbers and Strings',
             'Other Arrays',
             'booleans',
-            'All of the Above',
+            'All of the Above'
         ]
     },
     {
         questionText: "String values must be enclosed within __________ to when being assigned to variables ",
-        correctAnswer:"quotes",
+        correctAnswer:'quotes',
         answerArr: [
             'commas',
             'quotes',
             'parentheses',
-            'curly brackets',
+            'curly brackets'
         ]
     },
     {
         questionText: "A very useful tool used during developing and debugging for printing content to the debugger is:",
-        correctAnswer:"console log",
+        correctAnswer:'console log',
         answerArr: [
             'JavaScript',
             'terminal/bash',
             'console log',
-            'for loops',
+            'for loops'
         ]
-    },
+    }
 ]
 
 // shows intro-text section on page load
@@ -98,7 +98,7 @@ window.onload = function(){
 }
 
 
-// function reals hidden section and hides active section
+// function rveals hidden section and hides active section
 function reveal(thisSection) {
     //hide active section
     activeSection.classList.add("hidden");
@@ -124,7 +124,7 @@ function quiz() {
 //loads new question data from our question obj array
 function loadQuestion(questionNum) {
     var newQuestion = QuestionsObj[questionNum];
-    currentCorrectAnswer = newQuestion.correctAnsStr;
+    currentCorrectAnswer = newQuestion.correctAnswer;
     questionText.innerHTML = newQuestion.questionText;
     answer1Text.innerHTML = newQuestion.answerArr[0];
     answer2Text.innerHTML = newQuestion.answerArr[1];
@@ -196,6 +196,7 @@ function endQuiz() {
     holdScore();
     reveal(endQuizSc);
     clearInterval(intervalID);
+    
 } 
 
 function clearScore() {
