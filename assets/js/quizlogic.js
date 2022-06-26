@@ -143,3 +143,16 @@ function updateScore(chk) {
         timeLeft -= 10;
     }
 }
+
+
+// events
+
+clearScoresBtn.addEventListener("click", clearScore);
+
+backToStartBtn.addEventListener("click", backToStart);
+
+startBtn.addEventListener("click", startQuiz);
+
+toHighScoresBtn.addEventListener("click", openHighScores);
+
+backFromHSBtn.addEventListener("click", backToStart);
