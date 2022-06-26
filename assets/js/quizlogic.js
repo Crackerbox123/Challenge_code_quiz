@@ -144,6 +144,118 @@ function updateScore(chk) {
     }
 }
 
+// handler attached to each answer button
+function btnHandler() {
+    var answerToCheck = this.textContent;
+    updateScore(checkAnswer(answerToCheck));
+    currentQuestionIdx++;
+    moveOn();
+}
+
+// progresses quiz after an answer is entered
+function moveOn() {
+    if(currentQuestionIdx < quizLength) {
+        quiz();
+    }
+    else { 
+       endQuiz();
+    }
+}
+
+// saves score of current quiz and outputs it on the end screen
+function holdScore() {
+    tempScore = timeLeft;
+    console.log("Your score is: " + tempScore);
+
+    var scoreOutput = document.getElementById("final-score");
+    scoreOutput.textContent = tempScore;
+}
+
+// runs the timer on screen, checking if the timer is up
+function showScore() {
+    timeLeft--;
+    console.log(timeLeft);
+    timer.textContent = timeLeft;
+
+    if(timeLeft <= 0){
+        endQuiz();
+    }
+}
+
+// ends quiz, holding the score, displaying the end page, and stoping the timer
+function endQuiz() {
+    holdScore();
+    reveal(endQuizSc);
+    clearInterval(intervalID);
+} 
+
+function clearScore() {
+    localStorage.clear();
+}
+
+function backToStart() {
+    location.reload();
+}
+
+function openHighScores() {
+    reveal(highScoreSc);
+}
+
+function loadHighScores() {
+    // get length of ScoreList
+    var scoreListLength = Object.keys(ScoreList).length;
+
+    // sort ScoreList
+    ScoreList.sort(function(a,b) {
+        return b.playerScore - a.playerScore;
+    });
+
+    // copy pasta
+    for(var {playerInitials, playerScore} of ScoreList){
+        console.log(playerInitials, playerScore);
+        let newRow = highScoreTbl.insertRow(-1);
+
+        let newCell = newRow.insertCell(0);
+        let newCell2 = newRow.insertCell(1);
+
+        let newText = document.createTextNode(playerInitials);
+        let newText2 = document.createTextNode(playerScore);
+        newCell.appendChild(newText);
+        newCell2.appendChild(newText2);
+    }
+}
+
+answer1Text.addEventListener("click", btnHandler);
+answer2Text.addEventListener("click", btnHandler);
+answer3Text.addEventListener("click", btnHandler);
+answer4Text.addEventListener("click", btnHandler);
+
+
+submitScoreBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    
+    var SavedScore = {
+        playerInitials: "",
+        playerScore: 0,
+    };
+
+    //add check for initials being present before saving
+
+    //adding values to SavedScore obj
+    SavedScore.playerInitials = initialsTextarea.value;
+    SavedScore.playerScore = tempScore;
+
+    //console logging the SavedScore values
+    console.log(SavedScore.playerInitials);
+    console.log(SavedScore.playerScore);
+    console.log(SavedScore);
+
+    //Push SavedScore into ScoreList and save it
+    ScoreList.push(SavedScore);
+    localStorage.setItem("ScoreList", JSON.stringify(ScoreList));
+});
+
+
 
 // events
 
