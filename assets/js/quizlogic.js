@@ -123,3 +123,23 @@ function loadQuestion(questionNum) {
     answer4Text.innerHTML = newQuestion.AnswerArr[3];
 
 }
+
+// compares the clicked answer to the correct answer
+function checkAnswer(answerClicked) {
+    if(answerClicked == currentCorrectAnswer){
+        return true;
+    }
+    else{ return false }
+}
+
+// handles decrementing of score
+function updateScore(chk) {
+    if(chk){
+        console.log("The answer was correct");
+    }
+    else{
+        console.log("The answer was incorrect");
+        //decrement time
+        timeLeft -= 10;
+    }
+}
