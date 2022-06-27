@@ -15,6 +15,13 @@ THEN I can save my initials and score
 
 ## Github Repo URL
 
+https://github.com/Crackerbox123/Challenge_code_quiz
+
 
 ## Gihub Depolyment URL + Screenshot
 
+https://crackerbox123.github.io/Challenge_code_quiz/
+
+
+
+<img width="380" alt="3b9a549a8b35baaa182f44f26ba9366b" src="https://user-images.githubusercontent.com/61638208/175852418-6f157ed9-1d92-4897-a7f4-91ec301b05e6.png">
