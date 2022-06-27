@@ -32,52 +32,52 @@ var activeSection;
 var QuestionsObj = [
     {
         questionText: "Commonly used data types do NOT include:",
-        correctAnswer: 'alerts',
+        correctAnswer: '4. alerts',
         answerArr: [
-            'Numbers',
-            'strings',
-            'Boolean',
-            'alerts'
+            '1. Numbers',
+            '2. strings',
+            '3. Boolean',
+            '4. alerts'
         ]
     },
     {
         questionText: "The condition in an if/else statement is enclosed in ________",
-        correctAnswer: 'Curly Brackets',
+        correctAnswer: '2. Curly Brackets',
         answerArr: [
-            'Quotes',
-            'Curly Brackets',
-            'Parentheses',
-            'Square Brackets'
+            '1. Quotes',
+            '2. Curly Brackets',
+            '3. Parentheses',
+            '4. Square Brackets'
         ]
     },
     {
         questionText: "Arrays in JavaScript can be used to store:",
-        correctAnswer:'All of the Above',
+        correctAnswer:'4. All of the Above',
         answerArr: [
-            'Numbers and Strings',
-            'Other Arrays',
-            'booleans',
-            'All of the Above'
+            '1. Numbers and Strings',
+            '2. Other Arrays',
+            '3. booleans',
+            '4. All of the Above'
         ]
     },
     {
         questionText: "String values must be enclosed within __________ to when being assigned to variables ",
-        correctAnswer:'quotes',
+        correctAnswer:'2. quotes',
         answerArr: [
-            'commas',
-            'quotes',
-            'parentheses',
-            'curly brackets'
+            '1. commas',
+            '2. quotes',
+            '3. parentheses',
+            '4. curly brackets'
         ]
     },
     {
         questionText: "A very useful tool used during developing and debugging for printing content to the debugger is:",
-        correctAnswer:'console log',
+        correctAnswer:'3. console log',
         answerArr: [
-            'JavaScript',
-            'terminal/bash',
-            'console log',
-            'for loops'
+            '1. JavaScript',
+            '2. terminal/bash',
+            '3. console log',
+            '4. for loops'
         ]
     }
 ]

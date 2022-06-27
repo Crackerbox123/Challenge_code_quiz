@@ -13,7 +13,6 @@ header {
     align-content: center;
     justify-content: center;
     background-color:   lightgray;
-    width: 60%;
 }
 
 #intro h1 {
@@ -43,8 +42,5 @@ ul button {
     color: white;
 }
 
-#answers {
-    padding: 0px;
-}
 
     
