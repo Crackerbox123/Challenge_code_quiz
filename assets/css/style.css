@@ -29,9 +29,16 @@ header {
     display: block;
 }
 
-ul button {
-    padding: 20px;
-    margin: 20px;;
 
+ul button {
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 1em;
+    background-color: purple;
+    color: white;
+}
+
+li {
+    text-decoration: none;
 }
     
