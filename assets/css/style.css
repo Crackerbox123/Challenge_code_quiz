@@ -12,6 +12,8 @@ header {
     display: flex;
     align-content: center;
     justify-content: center;
+    background-color:   lightgray;
+    width: 60%;
 }
 
 #intro h1 {
@@ -29,16 +31,20 @@ header {
     display: block;
 }
 
+ul {
+    list-style: none;
+}
 
 ul button {
-    padding: 10px 20px;
-    margin: 20px;
+    padding: 10px;
+    margin: 20px 0px;
     border-radius: 1em;
     background-color: purple;
     color: white;
 }
 
-li {
-    text-decoration: none;
+#answers {
+    padding: 0px;
 }
+
     
